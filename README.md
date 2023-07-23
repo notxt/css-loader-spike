@@ -1,2 +1,2 @@
-# Sketch Book
+# sketch book
 Repo for UI sketching
