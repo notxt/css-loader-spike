@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <title>Art One</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: hsl(0, 0%, 90%);
+    }
+
+    main {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: hsl(0, 0%, 80%);
+      height: 80vmin;
+      width: 80vmin;
+      border-radius: 50%;
+    }
+
+    .head {
+      position: absolute;
+      border-right: 1.5vmin solid hsl(0, 0%, 10%, 0.5);
+      width: 50vmin;
+      height: 20vmin;
+      background-color: hsl(0, 0%, 95%);
+      left: 16vmin;
+      top: 20vmin;
+      border-top-left-radius: 10vmin;
+      border-top-right-radius: 10vmin;
+    }
+
+    .eye {
+      position: absolute;
+      width: 4vmin;
+      height: 4vmin;
+      border-radius: 50%;
+      background-color: hsl(0, 0%, 10%);
+      top: 10vmin;
+    }
+    .eye::after {
+      content: "";
+      background-color: hsl(0, 0%, 100%);
+      position: absolute;
+      width: 2vmin;
+      height: 2vmin;
+      border-radius: 50%;
+      left: 0.5vmin;
+      top: 0.5vmin;
+    }
+
+    .left-eye {
+      left: 1vmin;
+    }
+
+    .right-eye {
+      right: 7vmin;
+    }
+
+    .mouth {
+      position: absolute;
+      background-color: hsl(0, 0%, 10%);
+      width: 35vmin;
+      height: 4vmin;
+      top: 16vmin;
+      left: 3vmin;
+      border-top-right-radius: 2vmin;
+      border-top-left-radius: 2vmin;
+    }
+
+    .tooth {
+      position: absolute;
+      background-color: hsl(0, 0%, 100%);
+      height: 2vmin;
+      width: 2.5vmin;
+      border-top-left-radius: 0.35vmin;
+      border-top-right-radius: 0.35vmin;
+      border-bottom-left-radius: 0.35vmin;
+      border-bottom-right-radius: 0.35vmin;
+      top: 0.5vmin;
+    }
+    .top-tooth-1 {
+      left: 50%;
+      transform: rotate(-3deg);
+    }
+    .top-tooth-2 {
+      left: 40%;
+      transform: rotate(3deg);
+    }
+
+    .body {
+      position: absolute;
+      /* border: 1px dotted hsl(0, 0%, 0%); */
+      width: 50vmin;
+      height: 30vmin;
+      top: 20vmin;
+    }
+    .chest {
+        position: absolute;
+        background-color: hsl(0, 0%, 30%);
+        border-right: 1.5vmin solid hsl(0, 0%, 10%, 0.5);
+        width: 50vmin;
+        height: 10vmin;
+    }
+    .leg {
+        position: absolute;
+        background-color: hsl(0, 0%, 30%);
+        border-right: 1vmin solid hsl(0, 0%, 10%, 0.5);
+        width: 2vmin;
+        height: 5vmin;
+        top: 10vmin;
+    }
+    .leg.right {
+        right: 0
+    }
+    .arm {
+        position: absolute;
+        background-color: hsl(0, 0%, 30%);
+        border-right: 1vmin solid hsl(0, 0%, 10%, 0.5);
+        width: 2vmin;
+        height: 5vmin;
+        top: -1.5vmin;
+    }
+    .arm.left {
+        transform: rotate(90deg);
+        left: -3.5vmin;
+        top: 10;
+    }
+    .arm.right {
+        transform: rotate(90deg);
+        right: -2vmin;
+    }
+  </style>
+  <body>
+    <main>
+      <div class="head">
+        <div class="eye left-eye"></div>
+        <div class="eye right-eye"></div>
+        <div class="mouth">
+          <div class="tooth top-tooth-1"></div>
+          <div class="tooth top-tooth-2"></div>
+        </div>
+        <div class="body">
+            <div class="chest"></div>
+            <div class="arm left"></div>
+            <div class="arm right"></div>
+            <div class="leg"></div>
+            <div class="leg right"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

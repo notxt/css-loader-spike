@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <title>Draw</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    svg {
+      width: 100vw;
+      width: 100%;
+    }
+  </style>
+  <body>
+    <svg id="canvas" xmlns="http://www.w3.org/2000/svg">
+      <path 
+        id="line" 
+        fill="none"
+        stroke="black" 
+        stroke-width="1"
+        d="" 
+        />
+    </svg>
+  </body>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    canvas.setAttribute("viewBox", `0 0 ${width} ${height}`)
+
+
+    const line = document.getElementById("line");
+
+    const draw = ([x, y]) => {
+      let d = line.getAttribute("d");
+      
+      if (d === "") {
+        d = `M ${x}, ${y}\n`
+        console.log(d)
+        line.setAttribute("d", d)
+        return 
+      }
+
+      d += `L ${x}, ${y}\n`
+      console.log(d)
+
+      line.setAttribute("d", d);
+    };
+
+    canvas.onclick = (event) => {
+      const { offsetX: x, offsetY: y } = event;
+      console.log("click");
+
+      draw([x, y]);
+    };
+  </script>
+</html>

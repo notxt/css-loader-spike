@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <title>Art One</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: hsl(0deg, 100%, 7%);
+    }
+
+    main {
+      align-items: center;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      width: 100vw;
+    }
+
+    /* main > canvas {
+      height: 80vmin;
+      width: 80vmin;
+    } */
+
+    main > div {
+      background: linear-gradient(
+        to top,
+        hsl(035 100% 060%) 000%,
+        hsl(032 100% 050%) 010%,
+        hsl(316 070% 070%) 020%,
+        hsl(200 100% 020%) 030%,
+        hsl(200 100% 005%) 040%,
+        hsl(200 100% 100%) 050%,
+        hsl(200 100% 090%) 060%,
+        hsl(200 100% 080%) 070%,
+        hsl(200 100% 070%) 080%,
+        hsl(200 100% 060%) 090%,
+        hsl(200 100% 050%) 100%
+      );
+      height: 80vmin;
+      width: 80vmin;
+    }
+
+    .tester {
+      color: hsl(32, 100%, 50%);
+    }
+  </style>
+  <body>
+    <main>
+      <canvas></canvas>
+      <div></div>
+    </main>
+  </body>
+  <script>
+    const canvas = document.querySelector("canvas");
+
+    const img = new Image();
+
+    img.onload = () => {
+      let pixels;
+      const { width, height } = img;
+
+      canvas.width = width;
+      canvas.height = height;
+
+      const context = canvas.getContext("2d");
+      context.drawImage(img, 0, 0);
+
+      const imgData = context.getImageData(0, 0, width, height);
+      pixels = imgData.data;
+      console.log(pixels);
+      canvas.onmousemove = (event) => {
+        const { offsetX: x, offsetY: y } = event;
+
+        console.log("x", x, "y", y);
+      };
+    };
+
+    img.src = "/art/sunset.jpeg";
+  </script>
+</html>
