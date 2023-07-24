@@ -3,20 +3,18 @@
   <meta charset="UTF-8" />
   <title>Sketch Book</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <link href="base.css" rel="stylesheet" />
   <style>
-    .content {
+    .content-outer {
       align-items: center;
       display: flex;
       justify-content: center;
       height: 100vh;
     }
 
-    body > div {
+    .content {
       display: inline-block;
-    }
-
-    .content-inner {
       display: flex;
       justify-content: center;
     }
@@ -60,35 +58,49 @@
   </style>
 
   <body>
-    <div>
-      <div class="content-inner">
+    <div class="content-outer">
+      <div class="content">
         <header>
           <h1>Sketch Book</h1>
         </header>
 
         <main>
           <nav>
-            <h2>Animation</h2>
+            <h2>draw</h2>
             <ul>
-              <li><a href="/animation/draw.html">draw</a></li>
-              <li><a href="/animation/loader.html">loader</a></li>
+              <li><a href="draw/lil-dude.html">lil dude</a></li>
+              <li><a href="draw/sunset.html">sunset</a></li>
             </ul>
           </nav>
 
           <nav>
-            <h2>Art</h2>
+            <h2>icon</h2>
             <ul>
-              <li><a href="/art/blocks.html">blocks</a></li>
-              <li><a href="/art/lil-dude.html">lil dude</a></li>
-              <li><a href="/art/sunset.html">sunset</a></li>
+              <li><a href="icon/account.html">account</a></li>
+              <li><a href="icon/workstation.html">workstation</a></li>
             </ul>
           </nav>
 
           <nav>
-            <h2>Icon</h2>
+            <h2>layout</h2>
             <ul>
-              <li><a href="/icon/account.html">account</a></li>
-              <li><a href="/icon/workstation.html">workstation</a></li>
+              <li><a href="layout/blocks.html">blocks</a></li>
+            </ul>
+          </nav>
+
+          <nav>
+            <h2>move</h2>
+            <ul>
+              <li><a href="move/loader.html">loader</a></li>
+            </ul>
+          </nav>
+
+          <nav>
+            <h2>toy</h2>
+            <ul>
+              <li><a href="toy/color-picker.html">color picker</a></li>
+              <li><a href="toy/draw.html">draw</a></li>
+              <li><a href="toy/walk.html">walk</a></li>
             </ul>
           </nav>
         </main>

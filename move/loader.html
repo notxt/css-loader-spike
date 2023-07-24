@@ -3,19 +3,9 @@
   <meta charset="UTF-8" />
   <title>Loader One</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <link href="../base.css" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      align-items: center;
-      background-color: hsl(0, 50%, 50%);
-      display: flex;
-      justify-content: center;
-    }
-
     main {
       align-items: center;
       background-color: hsl(180, 50%, 50%);
@@ -30,7 +20,7 @@
         transform: rotate(360deg);
       }
     }
-    
+
     .load {
       animation-name: load;
       animation-duration: 1.5s;
@@ -42,19 +32,24 @@
       fill: hsl(275, 50%, 50%);
       height: 50%;
       width: 50%;
-      
     }
   </style>
   <body>
     <main>
-      <svg class="load" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <path class="arc"
+      <svg
+        class="load"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="arc"
           d="M 0,50
             A 50,50 0,0,1 100,50
             A 5,5 0,0,1 80,50
             A 20,20 0,0,0 20,50
             A 5,5 0,0,1 0,50 z
-            " />
+            "
+        />
       </svg>
     </main>
   </body>

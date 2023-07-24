@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <title>color picker</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <link href="../base.css" rel="stylesheet" />
+  <style>
+    body {
+      position: relative;
+    }
+
+    .control {
+      background-color: hsl(0 0% 100% / 50%);
+      column-gap: 1vmin;
+      display: flex;
+      height: 10vmin;
+      left: 2vmin;
+      padding: 1vmin;
+      position: fixed;
+      top: 2vmin;
+      width: 18vmin;
+    }
+
+    .control > * {
+      height: 8vmin;
+      width: 8vmin;
+      border: 1px dotted hsl(0 0% 0%);
+    }
+  </style>
+  <body>
+    <div class="control">
+      <div id="current"></div>
+      <div id="selected"></div>
+    </div>
+    <canvas id="canvas"></canvas>
+  </body>
+  <script>
+    const img = new Image();
+
+    const onload = () => {
+      const width = img.width;
+      const height = img.height;
+
+      console.log("width/height", width, height);
+
+      const canvas = document.getElementById("canvas");
+      canvas.width = width;
+      canvas.height = height;
+
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0);
+      img.style.display = "none";
+
+      const hoveredColor = document.getElementById("current");
+      const selectedColor = document.getElementById("selected");
+
+      function pick(event, destination) {
+        const bounding = canvas.getBoundingClientRect();
+        const x = event.clientX - bounding.left;
+        const y = event.clientY - bounding.top;
+        const pixel = ctx.getImageData(x, y, 1, 1);
+        const data = pixel.data;
+
+        const rgba = `rgba(${data[0]}, ${data[1]}, ${data[2]}, ${
+          data[3] / 255
+        })`;
+        console.log(rgba);
+        destination.style.background = rgba;
+        destination.textContent = rgba;
+
+        return rgba;
+      }
+
+      canvas.addEventListener("mousemove", (event) =>
+        pick(event, hoveredColor)
+      );
+      canvas.addEventListener("click", (event) => pick(event, selectedColor));
+    };
+
+    img.addEventListener("load", () => onload());
+    img.src = "color-picker.jpeg";
+  </script>
+</html>
